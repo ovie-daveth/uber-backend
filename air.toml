@@ -1,0 +1,41 @@
+# Config file for Air
+
+# Root directory
+root = "."   # Current directory
+
+# List of files or directories to exclude from watching
+tmp_dir = "tmp"
+
+# List of files to ignore. Glob pattern is supported.
+# This ignores anything in the node_modules folder.
+[ignore]
+dirs = ["node_modules", "tmp", "vendor"]
+
+# Watching directories, by default all.
+# To explicitly specify which directories to watch, uncomment below.
+# [[include]]
+#   dirs = ["."]
+#   exts = ["go", "tpl", "tmpl", "html", "js"] # Watch file extensions
+#   recursive = true
+
+# Commands or events
+[[cmds]]
+  name = "run the Go app"
+  cmd = "go run ."
+  # Build before running
+  build_delay = 200
+
+# Customize how the log outputs
+[log]
+level = "info"
+colors = true
+timestamp = false
+
+# Specify if air should clear the terminal on reload
+clear_log = true
+
+# Define output directory for compiled binaries (if any)
+bin_dir = "tmp"
+
+# Number of times to retry if a command fails
+retry_limit = 5
