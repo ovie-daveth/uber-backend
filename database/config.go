@@ -23,7 +23,7 @@ func DbInstance() *mongo.Client {
 		return Client // Return existing client if already initialized
 	}
 
-	mongoDb := "mongodb+srv://test:Thepreacher1@cluster0.sdg0iit.mongodb.net/"
+	mongoDb := os.Getenv("mongodbUrl")
 	fmt.Println("Connecting to MongoDB...")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 50*time.Second)
